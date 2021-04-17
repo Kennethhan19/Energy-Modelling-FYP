@@ -35,3 +35,13 @@ energy_prediction = linear_model.predict(parameters_test)
 print(energy_prediction)
 print(energy_test)
 print('Model score:', linear_model.score(parameters_test, energy_test))
+
+#plot the prediction vs actual
+benchmarks=['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9','B10']
+plt.plot(benchmarks, energy_prediction, color = "green", label="prediction")
+plt.plot(benchmarks, energy_test, color = "red", label="measured")
+plt.title("Benchmarks vs Energy")
+plt.xlabel("Benchmarks")
+plt.ylabel("Energy mJ")
+plt.legend()
+plt.show()
